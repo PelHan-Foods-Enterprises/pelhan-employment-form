@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PelHan Foods Enterprises - Employment Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c5530;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #4a7c59, #2c5530);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+        }
+        .company-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c5530;
+            margin-bottom: 5px;
+        }
+        .tagline {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+        .form-title {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            color: #2c5530;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            min-width: 150px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="email"], 
+        .form-group input[type="tel"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+        .section-header {
+            background-color: #f0f7f0;
+            padding: 10px;
+            margin: 25px 0 15px 0;
+            font-weight: bold;
+            color: #2c5530;
+            border-left: 4px solid #2c5530;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .referee-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .referee-title {
+            font-weight: bold;
+            color: #2c5530;
+            margin-bottom: 10px;
+        }
+        .note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #856404;
+        }
+        .signature-section {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+        .signature-box {
+            width: 250px;
+            border-bottom: 2px solid #000;
+            height: 40px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        .digital-signature-option {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+        .digital-signature-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .digital-signature-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 18px;
+            font-style: italic;
+            display: none;
+        }
+        .digital-signature-input.active {
+            display: block;
+        }
+        .print-button {
+            background-color: #2c5530;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .print-button:hover {
+            background-color: #1a3320;
+        }
+        .disclaimer {
+            background-color: #f8f9fa;
+            border: 2px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .disclaimer-title {
+            font-weight: bold;
+            color: #dc3545;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .legal-text {
+            color: #495057;
+        }
+        .bold-warning {
+            font-weight: bold;
+            color: #dc3545;
+            background-color: #fff5f5;
+            padding: 8px;
+            margin: 8px 0;
+            border-left: 4px solid #dc3545;
+        }
+        .submit-section {
+            background-color: #e8f5e8;
+            border: 2px solid #2c5530;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .submit-instructions {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #2c5530;
+        }
+        .submit-button {
+            background-color: #2c5530;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .submit-button:hover {
+            background-color: #1a3320;
+        }
+        @media print {
+            .print-button, .submit-section {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        function submitForm() {
+            // Collect form data
+            const formData = new FormData(document.querySelector('form'));
+            let emailBody = "NEW EMPLOYMENT APPLICATION - PelHan Foods Enterprises\n\n";
+            
+            // Build email content
+            for (let [key, value] of formData.entries()) {
+                if (value.trim() !== '') {
+                    emailBody += `${key}: ${value}\n`;
+                }
+            }
+            
+            // Create mailto link
+            const subject = encodeURIComponent("Employment Application - " + (formData.get('fullName') || 'New Applicant'));
+            const body = encodeURIComponent(emailBody);
+            const mailtoLink = `mailto:jasell2015@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+        }
+
+        function saveAsPDF() {
+            window.print();
+        }
+
+        // Digital signature functionality
+        function toggleDigitalSignature() {
+            const checkbox = document.getElementById('digitalSignatureCheckbox');
+            const input = document.getElementById('digitalSignatureInput');
+            
+            if (checkbox.checked) {
+                input.classList.add('active');
+                input.required = true;
+                input.focus();
+            } else {
+                input.classList.remove('active');
+                input.required = false;
+                input.value = '';
+            }
+        }
+
+        // Auto-fill today's date
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('applicationDate').value = today;
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-section">
+            <div class="logo">
+                🍽️<br>🐟
+            </div>
+            <div>
+                <div class="company-name">PelHan Foods Enterprises</div>
+                <div class="tagline">Frozen and Fresh Foods</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-title">EMPLOYMENT APPLICATION FORM</div>
+
+    <div class="disclaimer">
+        <div class="disclaimer-title">IMPORTANT LEGAL NOTICE</div>
+        <div class="legal-text">
+            <p><strong>This is a binding document for job employment consideration, but THIS IS NOT AN EMPLOYMENT CONTRACT.</strong> This application does not guarantee employment and does not constitute an offer of employment.</p>
+            
+            <p><strong>Verification Process:</strong> All information provided will be thoroughly verified, and all references will be contacted and verified before any employment contract will be issued.</p>
+            
+            <div class="bold-warning">
+                <strong>REFEREE LIABILITY CLAUSE:</strong> By providing their details as references, all signed referees legally admit to being legally responsible for any actions of the candidate if employed. References acknowledge that they will take full responsibility for any loss, damage, theft, misconduct, or liability caused by the candidate during their employment with PelHan Foods Enterprises.
+            </div>
+            
+            <p><strong>Additional Terms:</strong></p>
+            <ul>
+                <li>False or misleading information will result in immediate disqualification or termination</li>
+                <li>Background checks and reference verification are mandatory</li>
+                <li>Employment is subject to satisfactory completion of probationary period</li>
+                <li>Company reserves the right to terminate employment at any time for cause</li>
+                <li>All company policies and procedures must be strictly followed</li>
+                <li>Confidentiality agreements may be required for certain positions</li>
+            </ul>
+            
+            <p><strong>By signing this application, you acknowledge that you have read, understood, and agree to all terms stated above.</strong></p>
+        </div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Print This Form</button>
+
+    <form>
+        <div class="section-header">PERSONAL INFORMATION</div>
+        
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name as it appears on ID">
+        </div>
+
+        <div class="form-group">
+            <label for="address">Home Address:</label>
+            <textarea id="address" name="address" placeholder="Enter complete home address including street, city, state"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="postcode">Post Code:</label>
+            <input type="text" id="postcode" name="postcode" placeholder="Enter postal/zip code">
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="16" max="100" placeholder="Must be 16 or older">
+        </div>
+
+        <div class="form-group">
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="religion">Religion:</label>
+            <input type="text" id="religion" name="religion" placeholder="Optional - specify if relevant to dietary requirements">
+        </div>
+
+        <div class="section-header">EDUCATION BACKGROUND</div>
+        
+        <div class="form-group">
+            <label for="education">Highest Education:</label>
+            <select id="education" name="education">
+                <option value="">Select</option>
+                <option value="primary">Primary School</option>
+                <option value="secondary">Secondary School</option>
+                <option value="diploma">Diploma/Certificate</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="master">Master's Degree</option>
+                <option value="phd">PhD/Doctorate</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="schoolName">School/Institution:</label>
+            <input type="text" id="schoolName" name="schoolName" placeholder="Name of last educational institution attended">
+        </div>
+
+        <div class="form-group">
+            <label for="graduationYear">Year Completed:</label>
+            <input type="number" id="graduationYear" name="graduationYear" min="1950" max="2025" placeholder="Year of graduation/completion">
+        </div>
+
+        <div class="section-header">WORK EXPERIENCE</div>
+        
+        <div class="form-group">
+            <label for="previousJob">Previous Job Title:</label>
+            <input type="text" id="previousJob" name="previousJob" placeholder="Most recent job position (if any)">
+        </div>
+
+        <div class="form-group">
+            <label for="previousEmployer">Previous Employer:</label>
+            <input type="text" id="previousEmployer" name="previousEmployer" placeholder="Name of previous company/organization">
+        </div>
+
+        <div class="form-group">
+            <label for="workDuration">Duration:</label>
+            <input type="text" id="workDuration" name="workDuration" placeholder="e.g., 2020-2023 or 3 years">
+        </div>
+
+        <div class="form-group">
+            <label for="workDescription">Job Responsibilities:</label>
+            <textarea id="workDescription" name="workDescription" placeholder="Briefly describe your main duties and responsibilities"></textarea>
+        </div>
+
+        <div class="section-header">BANK DETAILS</div>
+        
+        <div class="form-group">
+            <label for="bankName">Bank Name:</label>
+            <input type="text" id="bankName" name="bankName" placeholder="Name of your bank">
+        </div>
+
+        <div class="form-group">
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" placeholder="Your bank account number">
+        </div>
+
+        <div class="form-group">
+            <label for="sortCode">Sort Code/Routing:</label>
+            <input type="text" id="sortCode" name="sortCode" placeholder="Bank sort code or routing number">
+        </div>
+
+        <div class="form-group">
+            <label for="accountType">Account Type:</label>
+            <select id="accountType" name="accountType">
+                <option value="">Select</option>
+                <option value="checking">Checking/Current</option>
+                <option value="savings">Savings</option>
+            </select>
+        </div>
+
+        <div class="section-header">REFERENCES</div>
+        
+        <div class="note">
+            <strong>Important:</strong> References must be non-relatives (not parents, siblings, or family members) who can vouch for your character and work ethic. Acceptable references include former employers, teachers, mentors, or community leaders.
+        </div>
+
+        <div class="referee-section">
+            <div class="referee-title">Reference 1</div>
+            <div class="form-group">
+                <label for="ref1Name">Full Name:</label>
+                <input type="text" id="ref1Name" name="ref1Name" placeholder="Referee's full name">
+            </div>
+            <div class="form-group">
+                <label for="ref1Relationship">Relationship:</label>
+                <input type="text" id="ref1Relationship" name="ref1Relationship" placeholder="e.g., Former Supervisor, Teacher, Pastor">
+            </div>
+            <div class="form-group">
+                <label for="ref1Phone">Phone Number:</label>
+                <input type="tel" id="ref1Phone" name="ref1Phone" placeholder="Contact phone number">
+            </div>
+            <div class="form-group">
+                <label for="ref1Email">Email Address:</label>
+                <input type="email" id="ref1Email" name="ref1Email" placeholder="Contact email address">
+            </div>
+            <div class="form-group">
+                <label for="ref1Duration">Known for:</label>
+                <input type="text" id="ref1Duration" name="ref1Duration" placeholder="How long have you known them?">
+            </div>
+        </div>
+
+        <div class="referee-section">
+            <div class="referee-title">Reference 2</div>
+            <div class="form-group">
+                <label for="ref2Name">Full Name:</label>
+                <input type="text" id="ref2Name" name="ref2Name" placeholder="Referee's full name">
+            </div>
+            <div class="form-group">
+                <label for="ref2Relationship">Relationship:</label>
+                <input type="text" id="ref2Relationship" name="ref2Relationship" placeholder="e.g., Former Colleague, Community Leader, Coach">
+            </div>
+            <div class="form-group">
+                <label for="ref2Phone">Phone Number:</label>
+                <input type="tel" id="ref2Phone" name="ref2Phone" placeholder="Contact phone number">
+            </div>
+            <div class="form-group">
+                <label for="ref2Email">Email Address:</label>
+                <input type="email" id="ref2Email" name="ref2Email" placeholder="Contact email address">
+            </div>
+            <div class="form-group">
+                <label for="ref2Duration">Known for:</label>
+                <input type="text" id="ref2Duration" name="ref2Duration" placeholder="How long have you known them?">
+            </div>
+        </div>
+
+        <div class="section-header">DECLARATION</div>
+        
+        <div class="note">
+            I declare that all information provided in this application is true and complete to the best of my knowledge. I understand that any false information may lead to rejection of my application or termination of employment if discovered later.
+        </div>
+
+        <div class="signature-section">
+            <div>
+                <div class="digital-signature-option">
+                    <div class="digital-signature-checkbox">
+                        <input type="checkbox" id="digitalSignatureCheckbox" onchange="toggleDigitalSignature()">
+                        <label for="digitalSignatureCheckbox">
+                            <strong>✓ I agree to use my typed name as my digital signature</strong>
+                        </label>
+                    </div>
+                    <input type="text" 
+                           id="digitalSignatureInput" 
+                           name="digitalSignature" 
+                           class="digital-signature-input" 
+                           placeholder="Type your full name here as your signature">
+                </div>
+                <div class="signature-box"></div>
+                <strong>Applicant's Signature (Sign above OR use digital option above)</strong>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="applicationDate">Date:</label>
+                    <input type="date" id="applicationDate" name="applicationDate" value="2025-11-06">
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-section">
+            <div class="submit-instructions">How to Submit This Application:</div>
+            <div style="margin-bottom: 15px;">
+                <strong>Option 1 - Online Submission:</strong> Click the button below to email your application directly to our HR department.
+            </div>
+            <div style="margin-bottom: 15px;">
+                <strong>Option 2 - Print & Submit:</strong> Print this form, fill it by hand, and deliver to our office.
+            </div>
+            <div style="margin-bottom: 15px;">
+                <strong>Office Address:</strong> PelHan Foods Enterprises, [38 Ilupeju Estate Ofatedo Osogbo, Osun State.]
+            </div>
+            <button type="button" class="submit-button" onclick="submitForm()">📧 Email Application</button>
+            <button type="button" class="submit-button" onclick="saveAsPDF()">🖨️ Print/Save as PDF</button>
+        </div>
+    </form>
+
+    <div style="margin-top: 30px; text-align: center; color: #666; font-size: 12px;">
+        <p>PelHan Foods Enterprises - Frozen and Fresh Foods</p>
+        <p>For office use only: Application received on _____________ by _____________</p>
+    </div>
+</body>
+</html>
